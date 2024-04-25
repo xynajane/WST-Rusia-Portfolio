@@ -42,5 +42,20 @@ $(document).ready(function(){
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const connectButton = document.getElementById('connectButton');
+  const overlay = document.getElementById('overlay');
+
+  connectButton.addEventListener('click', function() {
+      overlay.classList.remove('hidden');
+  });
+
+  overlay.addEventListener('click', function(event) {
+      if (!event.target.closest('.container')) {
+          overlay.classList.add('hidden');
+      }
+  });
+});
+
 
 
