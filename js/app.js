@@ -42,20 +42,33 @@ $(document).ready(function(){
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const connectButton = document.getElementById('connectButton');
   const overlay = document.getElementById('overlay');
+  const container = document.querySelector('#overlay .container');
+  const contactForm = document.getElementById('contactForm');
 
-  connectButton.addEventListener('click', function() {
+  connectButton.addEventListener('click', function () {
       overlay.classList.remove('hidden');
   });
 
-  overlay.addEventListener('click', function(event) {
-      if (!event.target.closest('.container')) {
+  overlay.addEventListener('click', function (event) {
+      if (event.target === overlay) {
+          overlay.classList.add('hidden');
+      }
+  });
+
+  contactForm.addEventListener('click', function (event) {
+      event.stopPropagation();
+  });
+
+  document.addEventListener('click', function (event) {
+      if (!container.contains(event.target) && event.target !== connectButton) {
           overlay.classList.add('hidden');
       }
   });
 });
+
 
 
 

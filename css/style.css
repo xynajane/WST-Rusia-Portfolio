@@ -201,10 +201,10 @@ section.education .card-wrapper .card{
 }
 section.education .card-wrapper .card img{
     position: absolute;
-    top:-3.5rem;
+    top:-2.5rem;
     left:50%;
     transform: translateX(-50%);
-    width:33%;
+    width:25%;
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
